@@ -48,7 +48,7 @@
     [super awakeFromNib];
     self.title = @"Photo Note";
     _newMedia = YES;
-    self.showAds = NO;
+    self.showAds = YES;
    
   
 }
@@ -342,10 +342,30 @@
     return YES;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotate {
+    
+        return YES;
+}
+
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    NSUInteger orientations = 0;
+    return ((orientations == UIInterfaceOrientationMaskPortrait)|UIInterfaceOrientationMaskPortrait);
+}
+
+/*- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return ((interfaceOrientation == UIInterfaceOrientationPortrait)|UIInterfaceOrientationPortrait);
-}
+}*/
+/*
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+	self.view = UIInterfaceOrientationIsLandscape(toInterfaceOrientation) ? _viewLandscape : _viewPortrait;
+}*/
+
+
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
@@ -362,7 +382,7 @@
         self.adMobView.adSize = kGADAdSizeSmartBannerPortrait;
         
     }
-        
+ 
 }
 
 

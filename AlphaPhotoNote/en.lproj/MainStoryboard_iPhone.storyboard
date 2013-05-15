@@ -19,7 +19,7 @@
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k0A-cF-MMF">
                                         <rect key="frame" x="0.0" y="92" width="320" height="296"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                           Start Touching the Screen.                       </string>
+                                        <string key="text">Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                           Start Writing on the Screen.                       </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
