@@ -344,17 +344,21 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait|UIInterfaceOrientationPortrait);
+    return ((interfaceOrientation == UIInterfaceOrientationPortrait)|UIInterfaceOrientationPortrait);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
     if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)){
-        self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+      //  self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierLandscape;
+        self.bannerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+
         self.adMobView.adSize = kGADAdSizeSmartBannerLandscape;
     }
     else{
-        self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    //    self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+        self.bannerView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+
         self.adMobView.adSize = kGADAdSizeSmartBannerPortrait;
         
     }
@@ -371,10 +375,7 @@
     {
     self.bannerView = [[ADBannerView alloc] initWithFrame:CGRectZero];
     self.bannerView.frame = CGRectOffset(self.bannerView.frame, 0, -(self.view.frame.size.height- self.view.bounds.size.height));
-    
-    [self.bannerView setRequiredContentSizeIdentifiers:[NSSet setWithObjects:
-                                                        ADBannerContentSizeIdentifierPortrait, ADBannerContentSizeIdentifierLandscape,nil]];
-    self.bannerView.currentContentSizeIdentifier = ADBannerContentSizeIdentifierPortrait;
+    self.bannerView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     
     
     [self.view addSubview:self.bannerView];

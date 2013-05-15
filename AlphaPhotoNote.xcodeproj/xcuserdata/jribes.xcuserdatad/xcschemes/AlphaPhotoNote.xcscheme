@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4401DD2E171601ED0082ACC0"
-               BuildableName = "PhotoNote.app"
-               BlueprintName = "PhotoNote"
-               ReferencedContainer = "container:PhotoNote.xcodeproj">
+               BuildableName = "AlphaPhotoNote.app"
+               BlueprintName = "AlphaPhotoNote"
+               ReferencedContainer = "container:AlphaPhotoNote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4401DD57171601ED0082ACC0"
-               BuildableName = "PhotoNoteTests.octest"
-               BlueprintName = "PhotoNoteTests"
-               ReferencedContainer = "container:PhotoNote.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4401DD2E171601ED0082ACC0"
-            BuildableName = "PhotoNote.app"
-            BlueprintName = "PhotoNote"
-            ReferencedContainer = "container:PhotoNote.xcodeproj">
+            BuildableName = "AlphaPhotoNote.app"
+            BlueprintName = "AlphaPhotoNote"
+            ReferencedContainer = "container:AlphaPhotoNote.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4401DD2E171601ED0082ACC0"
-            BuildableName = "PhotoNote.app"
-            BlueprintName = "PhotoNote"
-            ReferencedContainer = "container:PhotoNote.xcodeproj">
+            BuildableName = "AlphaPhotoNote.app"
+            BlueprintName = "AlphaPhotoNote"
+            ReferencedContainer = "container:AlphaPhotoNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4401DD2E171601ED0082ACC0"
-            BuildableName = "PhotoNote.app"
-            BlueprintName = "PhotoNote"
-            ReferencedContainer = "container:PhotoNote.xcodeproj">
+            BuildableName = "AlphaPhotoNote.app"
+            BlueprintName = "AlphaPhotoNote"
+            ReferencedContainer = "container:AlphaPhotoNote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
