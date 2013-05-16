@@ -54,11 +54,17 @@
     [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
 
 }
+/*
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-	return YES;
+- (BOOL)shouldAutorotate {
+    
+    return YES;
 }
 
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskAll;
+}
+*/
 @end

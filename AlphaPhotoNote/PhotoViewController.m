@@ -188,10 +188,8 @@
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-#define MAX_IMAGE_WIDTH 250
 
 // called when the user chooses an image in the UIImagePickerController
-// limit any image to MAX_IMAGE_WIDTH
 // dismisses the UIImagePickerController
 
 
@@ -342,6 +340,8 @@
     return YES;
 }
 
+/*
+
 - (BOOL)shouldAutorotate {
     
         return YES;
@@ -350,15 +350,15 @@
 
 -(NSUInteger)supportedInterfaceOrientations
 {
-    NSUInteger orientations = 0;
-    return ((orientations == UIInterfaceOrientationMaskPortrait)|UIInterfaceOrientationMaskPortrait);
-}
+    return UIInterfaceOrientationMaskAll;
+}*/
 
-/*- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+/*
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return ((interfaceOrientation == UIInterfaceOrientationPortrait)|UIInterfaceOrientationPortrait);
-}*/
-/*
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
