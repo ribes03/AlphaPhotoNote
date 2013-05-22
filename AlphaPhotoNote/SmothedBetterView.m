@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Juan Ribes. All rights reserved.
 //
 
-#import "SmothedBetterView.h"
 
 #define CAPACITY 100
 #define FF .2
@@ -47,8 +46,8 @@ typedef struct
 -(void)configure
 {
     [self setMultipleTouchEnabled:NO];
-   // [self setPath:[UIBezierPath bezierPath]];
-   // [self.path setLineWidth:2.0];
+    [self setPath:[UIBezierPath bezierPath]];
+    [self.path setLineWidth:2.0];
     [self setColorPen:[UIColor blueColor]];
     _shouldClean = NO;
     _beginTouch = NO;
@@ -114,6 +113,7 @@ typedef struct
     self.incrementalImage = nil;
     [self setNeedsDisplay];
 }
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     ctr = 0;
@@ -121,9 +121,11 @@ typedef struct
     UITouch *touch = [touches anyObject];
     pts[0] = [touch locationInView:self];
     isFirstTouchPoint = YES;
+    _beginTouch = YES;
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     UITouch *touch = [touches anyObject];
     CGPoint p = [touch locationInView:self];
     ctr++;
@@ -159,13 +161,13 @@ typedef struct
                 ls[3] = [self lineSegmentPerpendicularTo:(LineSegment){pointsBuffer[i+2], pointsBuffer[i+3]} ofRelativeLength:frac3];
                 [self.path moveToPoint:ls[0].firstPoint]; // ................. (6)
                 [self.path addCurveToPoint:ls[3].firstPoint controlPoint1:ls[1].firstPoint controlPoint2:ls[2].firstPoint];
-                [self.path addLineToPoint:ls[3].secondPoint];
-                [self.path addCurveToPoint:ls[0].secondPoint controlPoint1:ls[2].secondPoint controlPoint2:ls[1].secondPoint];
+            //    [self.path addLineToPoint:ls[3].secondPoint];
+            //    [self.path addCurveToPoint:ls[0].secondPoint controlPoint1:ls[2].secondPoint controlPoint2:ls[1].secondPoint];
                 [self.path closePath];
                 lastSegmentOfPrev = ls[3]; // ................. (7)
                 // Suggestion: Apply smoothing on the shared line segment of the two adjacent offsetPaths
             }
-            [self drawBitmap];
+            //[self drawBitmap];
          /*
             UIGraphicsBeginImageContextWithOptions(bounds.size, YES, 0.0);
             if (!self.incrementalImage)
@@ -181,12 +183,13 @@ typedef struct
             [offsetPath fill];
             self.incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
-            //to
-            */
-            [self.path removeAllPoints];
+            //to*/
+            
+            //[self.path removeAllPoints];
             dispatch_async(dispatch_get_main_queue(), ^{
                 bufIdx = 0;
-                [self setNeedsDisplay];
+               // [self setNeedsDisplay];
+            [self drawBitmap];
             });
         });
         pts[0] = pts[3];
@@ -219,12 +222,15 @@ typedef struct
 
 - (void)drawRect:(CGRect)rect
 {
-    [self.incrementalImage drawInRect:rect];
+    //[self.incrementalImage drawInRect:rect];
+    [self.path stroke];
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    // Left as an exercise!
-    [self setNeedsDisplay];
+    [self drawBitmap];
+    //[self setNeedsDisplay];
+    [self.path removeAllPoints];
+    ctr = 0;
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -238,14 +244,14 @@ typedef struct
     self.incrementalImage = nil;
     self.bufferedImage = nil;
     [self drawBitmap];
-    [self setNeedsDisplay];
+   // [self setNeedsDisplay];
 }
 
 -(void) replaceImage
 {
     self.incrementalImage = self.bufferedImage;
     [self drawBitmap];
-    [self setNeedsDisplay];
+   // [self setNeedsDisplay];
 }
 
 
