@@ -29,6 +29,9 @@
     [self setColorPen:[UIColor blueColor]];
     _shouldClean = NO;
     _beginTouch = NO;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(replaceImage:)];
+    tap.numberOfTapsRequired = 2; // Tap twice to clear drawing!
+    [self addGestureRecognizer:tap];
      
 }
 
@@ -108,7 +111,7 @@
         [self.path moveToPoint:pts[0]];
         [self.path addCurveToPoint:pts[3] controlPoint1:pts[1] controlPoint2:pts[2]];
         [self drawBitmap];
-       //[self setNeedsDisplay];
+        //[self setNeedsDisplay];
         // replace points and get ready to handle the next segment
         pts[0] = pts[3]; 
         pts[1] = pts[4]; 
@@ -139,13 +142,19 @@
     [self setNeedsDisplay];
 }
 
--(void) replaceImage
+-(void) replaceImage:(UITapGestureRecognizer *)t
 {
     self.incrementalImage = self.bufferedImage;
     [self drawBitmap];
     [self setNeedsDisplay];
 }
 
+-(void) replaceImage
+{
+    self.incrementalImage = self.bufferedImage;
+    [self drawBitmap];
+    [self setNeedsDisplay];
+}
 
 - (void)drawBitmap
 {

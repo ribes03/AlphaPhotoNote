@@ -123,7 +123,78 @@ typedef struct
     isFirstTouchPoint = YES;
     _beginTouch = YES;
 }
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [touches anyObject];
+    CGPoint p = [touch locationInView:self];
+    ctr++;
+    pts[ctr] = p;
+    if (ctr == 4)
+    {
+        pts[3] = CGPointMake((pts[2].x + pts[4].x)/2.0, (pts[2].y + pts[4].y)/2.0);
+        pointsBuffer[bufIdx] = pts[0];
+        pointsBuffer[bufIdx + 1] = pts[1];
+        pointsBuffer[bufIdx + 2] = pts[2];
+        pointsBuffer[bufIdx + 3] = pts[3];
+        bufIdx += 4;
+        CGRect bounds = self.bounds;
+        dispatch_async(drawingQueue, ^{ // ................. (3)
+            if (bufIdx == 0) return; // ................. (4)
+            //UIBezierPath *path = [UIBezierPath bezierPath];
+            for ( int i = 0; i < bufIdx; i += 4)
+            {
+                [self.path moveToPoint:pointsBuffer[i]];
+                [self.path addCurveToPoint:pointsBuffer[i+3] controlPoint1:pointsBuffer[i+1] controlPoint2:pointsBuffer[i+2]];
+            }
+                        dispatch_async(dispatch_get_main_queue(), ^{ // ................. (5)
+                bufIdx = 0;
+                            UIGraphicsBeginImageContextWithOptions(bounds.size, YES, 0.0);
+                            if (!self.incrementalImage) // first time; paint background white
+                            {
+                                UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+                                [[UIColor whiteColor] setFill];
+                                [rectpath fill];
+                            } else {
+                                if ((!_shouldClean) && (!self.incrementalImage))
+                                    [[UIColor colorWithPatternImage:self.incrementalImage] setFill];
+                            }
+                            [self.incrementalImage drawInRect:CGRectMake(0,0,self.bounds.size.width,self.bounds.size.height)];
+                            [self.colorPen setStroke];
+                            
+                            [self.path stroke];
+                            self.incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
+                            UIGraphicsEndImageContext();
+
+            });
+        });
+        pts[0] = pts[3];
+        pts[1] = pts[4];
+        ctr = 1;
+    }
+}
+/*
+- (void)drawBitmap
+{
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
+    if (!self.incrementalImage) // first time; paint background white
+    {
+        UIBezierPath *rectpath = [UIBezierPath bezierPathWithRect:self.bounds];
+        [[UIColor whiteColor] setFill];
+        [rectpath fill];
+    } else {
+        if ((!_shouldClean) && (!self.incrementalImage))
+            [[UIColor colorWithPatternImage:self.incrementalImage] setFill];
+    }
+    [self.incrementalImage drawInRect:CGRectMake(0,0,self.bounds.size.width,self.bounds.size.height)];
+    [self.colorPen setStroke];
+    [self.path stroke];
+    self.incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+}*/
+
+- (void)touchesMovedNot:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
     UITouch *touch = [touches anyObject];
@@ -189,7 +260,7 @@ typedef struct
             dispatch_async(dispatch_get_main_queue(), ^{
                 bufIdx = 0;
                // [self setNeedsDisplay];
-            [self drawBitmap];
+           // [self drawBitmap];
             });
         });
         pts[0] = pts[3];
@@ -198,7 +269,7 @@ typedef struct
     }
 }
 
-- (void)drawBitmap
+/*- (void)drawBitmap
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
     if (!self.incrementalImage) // first time; paint background white
@@ -216,19 +287,19 @@ typedef struct
     self.incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-}
+}*/
 
 
 
 - (void)drawRect:(CGRect)rect
 {
-    //[self.incrementalImage drawInRect:rect];
+    [self.incrementalImage drawInRect:rect];
     [self.path stroke];
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self drawBitmap];
-    //[self setNeedsDisplay];
+    //[self drawBitmap];
+    [self setNeedsDisplay];
     [self.path removeAllPoints];
     ctr = 0;
 }
@@ -243,15 +314,15 @@ typedef struct
     _shouldClean = YES;
     self.incrementalImage = nil;
     self.bufferedImage = nil;
-    [self drawBitmap];
-   // [self setNeedsDisplay];
+   // [self drawBitmap];
+  //  [self setNeedsDisplay];
 }
 
 -(void) replaceImage
 {
     self.incrementalImage = self.bufferedImage;
-    [self drawBitmap];
-   // [self setNeedsDisplay];
+   // [self drawBitmap];
+    [self setNeedsDisplay];
 }
 
 
