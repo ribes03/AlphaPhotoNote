@@ -30,7 +30,7 @@
     _shouldClean = NO;
     _beginTouch = NO;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(replaceImage:)];
-    tap.numberOfTapsRequired = 2; // Tap twice to clear drawing!
+    tap.numberOfTapsRequired = 3; // Tap three to clear drawing!
     [self addGestureRecognizer:tap];
      
 }
@@ -144,9 +144,7 @@
 
 -(void) replaceImage:(UITapGestureRecognizer *)t
 {
-    self.incrementalImage = self.bufferedImage;
-    [self drawBitmap];
-    [self setNeedsDisplay];
+    [self replaceImage];
 }
 
 -(void) replaceImage

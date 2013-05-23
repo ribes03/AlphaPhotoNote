@@ -324,12 +324,7 @@
 				GCC_PREFIX_HEADER = "AlphaPhotoNote/AlphaPhotoNote-Prefix.pch";
 				INFOPLIST_FILE = "AlphaPhotoNote/AlphaPhotoNote-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../AlphaPhotoNote/AlphaPhotoNote/AdMob\"",
-					"\"$(SRCROOT)/../../Downloads/CJPAdController-master/Demo/CJPAdControllerDemo/AdMob\"",
-					"\"$(SRCROOT)/AdMob\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_NAME = AlphaPhotoNote;
@@ -344,12 +339,7 @@
 				GCC_PREFIX_HEADER = "AlphaPhotoNote/AlphaPhotoNote-Prefix.pch";
 				INFOPLIST_FILE = "AlphaPhotoNote/AlphaPhotoNote-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../AlphaPhotoNote/AlphaPhotoNote/AdMob\"",
-					"\"$(SRCROOT)/../../Downloads/CJPAdController-master/Demo/CJPAdControllerDemo/AdMob\"",
-					"\"$(SRCROOT)/AdMob\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AlphaPhotoNote;
 				WRAPPER_EXTENSION = app;

@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
+@property (nonatomic,assign) BOOL alertShowing;
 @end
 
 @implementation PhotoViewController
@@ -86,10 +87,22 @@
                                                     otherButtonTitles:@"Black", @"Red", @"Green", @"Blue", nil];
     
     [actionSheet setTag:kActionSheetColor];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) [actionSheet showFromBarButtonItem:sender animated:YES];
-        else [actionSheet showInView:self.selectedImage];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (!_alertShowing){
+        [actionSheet showFromBarButtonItem:sender animated:YES];
+        actionSheet.delegate = self;
+        _alertShowing = YES;
+        }
+
+    }else [actionSheet showInView:self.selectedImage];
     
 }
+
+- (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    _alertShowing = NO;
+}
+
 - (IBAction)trashNote:(UIBarButtonItem *)sender
 {
     [UIView transitionWithView:self.selectedImage
