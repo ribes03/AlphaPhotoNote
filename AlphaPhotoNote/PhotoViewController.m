@@ -115,7 +115,7 @@
                     }
                     completion:NULL
      ];
-    _newMedia = YES;
+    _newMedia = NO;
     self.selectedImage.beginTouch = NO;
 }
 
@@ -132,7 +132,7 @@
                     }
                     completion:NULL
      ];
-    _newMedia = YES;
+    _newMedia = NO;
     self.selectedImage.beginTouch = NO;
 }
 
@@ -231,7 +231,7 @@
 
 - (IBAction)saveAlphaPhoto:(UIBarButtonItem *)sender
 {
-    if ((_newMedia) && (self.selectedImage.beginTouch))
+    if ((_newMedia) || (self.selectedImage.beginTouch))
     {
         UIImageWriteToSavedPhotosAlbum([self makeImage],
                                        self,
@@ -239,6 +239,7 @@
                                        nil);
     
         _newMedia = NO;
+         self.selectedImage.beginTouch = NO;
     }
     
 }
