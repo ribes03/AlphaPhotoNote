@@ -26,7 +26,6 @@
 		EF6E7A0E1733BD2700AF75AB /* photoNoteNonRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E7A0D1733BD2700AF75AB /* photoNoteNonRetina.png */; };
 		EF6E7A101733BD3200AF75AB /* photoNoteRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E7A0F1733BD3200AF75AB /* photoNoteRetina.png */; };
 		EF79911C174503E800BFCC5B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF79911B174503E800BFCC5B /* MobileCoreServices.framework */; };
-		EFCE61D9174D2228009D4A34 /* SmothedBetterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCE61D8174D2228009D4A34 /* SmothedBetterView.m */; };
 		EFF0685C172A657D00767E07 /* RotableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF0685A172A657D00767E07 /* RotableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +55,6 @@
 		EF6E7A0D1733BD2700AF75AB /* photoNoteNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteNonRetina.png; path = ../photoNoteNonRetina.png; sourceTree = "<group>"; };
 		EF6E7A0F1733BD3200AF75AB /* photoNoteRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteRetina.png; path = ../photoNoteRetina.png; sourceTree = "<group>"; };
 		EF79911B174503E800BFCC5B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		EFCE61D7174D2228009D4A34 /* SmothedBetterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmothedBetterView.h; sourceTree = "<group>"; };
-		EFCE61D8174D2228009D4A34 /* SmothedBetterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmothedBetterView.m; sourceTree = "<group>"; };
 		EFF06859172A657D00767E07 /* RotableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RotableViewController.h; path = ../RotableViewController.h; sourceTree = "<group>"; };
 		EFF0685A172A657D00767E07 /* RotableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RotableViewController.m; path = ../RotableViewController.m; sourceTree = "<group>"; };
 		EFF0685B172A657D00767E07 /* SplitViewBarButtonItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SplitViewBarButtonItemPresenter.h; path = ../SplitViewBarButtonItemPresenter.h; sourceTree = "<group>"; };
@@ -111,8 +108,6 @@
 		4401DD38171601ED0082ACC0 /* AlphaPhotoNote */ = {
 			isa = PBXGroup;
 			children = (
-				EFCE61D7174D2228009D4A34 /* SmothedBetterView.h */,
-				EFCE61D8174D2228009D4A34 /* SmothedBetterView.m */,
 				44AFF976172468EF00EC6206 /* SmoothedBIView.h */,
 				44AFF977172468EF00EC6206 /* SmoothedBIView.m */,
 				44AFF96B17231F2000EC6206 /* PhotoViewController.h */,
@@ -223,7 +218,6 @@
 				44AFF96D17231F2000EC6206 /* PhotoViewController.m in Sources */,
 				44AFF97B172468EF00EC6206 /* SmoothedBIView.m in Sources */,
 				EFF0685C172A657D00767E07 /* RotableViewController.m in Sources */,
-				EFCE61D9174D2228009D4A34 /* SmothedBetterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
