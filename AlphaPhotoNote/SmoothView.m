@@ -76,27 +76,6 @@
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-/*- (void)drawRect:(CGRect)rect
-{
-    
-    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0.0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    if (!self.incrementalImage) // first time; paint background white
-    {
-        [[UIColor whiteColor] setFill];
-        CGContextFillRect(context, self.bounds);
-    } else {
-        if ((!_shouldClean) && (!self.incrementalImage))
-            [[UIColor colorWithPatternImage:self.incrementalImage] setFill];
-    }
-    [self.incrementalImage drawInRect:CGRectMake(0,0,self.bounds.size.width,self.bounds.size.height)];
-    [self.colorPen setStroke];
-    CGContextStrokePath(context);
-    self.incrementalImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-}*/
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -168,7 +147,7 @@
     distance = distance / 10;
     distance = distance * 3;
     
-    if (3.0 - distance > self.lineWidth) {
+    if (4.0 - distance > self.lineWidth) {
         lineWidth = lineWidth + 0.3;
     } else {
         lineWidth = lineWidth - 0.3;

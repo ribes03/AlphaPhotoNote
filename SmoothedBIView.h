@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface SmoothedBIView : UIImageView
 @property (nonatomic,weak) UIColor* colorPen;
