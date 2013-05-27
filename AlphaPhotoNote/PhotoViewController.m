@@ -26,7 +26,8 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
-@property (nonatomic,assign) BOOL alertShowing;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
+@property (nonatomic,assign) BOOL alertShowing,infoShowing;
 @end
 
 @implementation PhotoViewController
@@ -40,7 +41,7 @@
     [super awakeFromNib];
     self.title = @"Photo Note";
     _newMedia = YES;
-   
+    _infoShowing = NO;
   
 }
 
@@ -110,8 +111,9 @@
                        options:UIViewAnimationOptionTransitionCurlUp
                     animations:^ { self.selectedImage.alpha = 1.0;
                         [self.selectedImage trash];
-                        [self.presentationLabel setText:@""];
-                         self.presentationLabel = nil;
+                       // [self.presentationLabel setText:@""];
+                       // [self.presentationLabel setHidden:YES];
+                        // self.presentationLabel = nil;
                     }
                     completion:NULL
      ];
@@ -119,6 +121,39 @@
     self.selectedImage.beginTouch = NO;
 }
 
+- (IBAction)showInfo:(UIButton *)sender
+{
+    
+    if (!_infoShowing){
+    [UIView transitionWithView:self.selectedImage
+                      duration:1.0
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^ { self.selectedImage.alpha = 1.0;
+                        [self.view setBackgroundColor:[UIColor lightGrayColor]];
+                        [self.presentationLabel setHidden:NO];
+                        [self.selectedImage setHidden:YES];
+                        [self.presentationLabel setText:@"Photo Annotation                   Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                          Start Writing on the Screen."];
+                    }
+                    completion:NULL
+     ];
+        _infoShowing = YES;
+    }else{
+    
+        [UIView transitionWithView:self.selectedImage
+                          duration:1.0
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^ { self.selectedImage.alpha = 1.0;
+                            [self.selectedImage setHidden:NO];
+                            [self.presentationLabel setHidden:YES];
+                            
+                        }
+                        completion:NULL
+         ];
+        _infoShowing = NO;
+    }
+
+
+}
     
 - (IBAction)clearNote:(UIBarButtonItem *)sender
 {
@@ -127,8 +162,9 @@
                        options:UIViewAnimationOptionTransitionCurlUp
                     animations:^ { self.selectedImage.alpha = 1.0;
                         [self.selectedImage replaceImage];
-                        [self.presentationLabel setText:@""];
-                        self.presentationLabel = nil;
+                       // [self.presentationLabel setText:@""];
+                      //   [self.presentationLabel setHidden:YES];
+                        //self.presentationLabel = nil;
                     }
                     completion:NULL
      ];
@@ -233,11 +269,12 @@
 {
     if ((_newMedia) || (self.selectedImage.beginTouch))
     {
+        [self.infoButton setHidden:YES];
         UIImageWriteToSavedPhotosAlbum([self makeImage],
                                        self,
                                        @selector(image:didFinishSavingWithError:contextInfo:),
                                        nil);
-    
+        [self.infoButton setHidden:NO];
         _newMedia = NO;
          self.selectedImage.beginTouch = NO;
     }
