@@ -108,6 +108,31 @@
             <point key="canvasLocation" x="-3377" y="-4504"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="PhotoViewController" superclassName="RotableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addPhoto:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="clearNote:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="saveAlphaPhoto:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="setColorPen:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="takePhoto:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="trashNote:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="clearButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="colorButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="presentationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="selectedImage" candidateClass="SmoothedBIView"/>
+                <relationship kind="outlet" name="trashButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="RotableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RotableViewController.h"/>
+        </class>
+        <class className="SmoothedBIView" superclassName="UIImageView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SmoothedBIView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
