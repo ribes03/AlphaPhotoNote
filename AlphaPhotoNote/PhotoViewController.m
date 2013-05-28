@@ -42,6 +42,7 @@
     self.title = @"Photo Note";
     _newMedia = YES;
     _infoShowing = NO;
+    [self showInfo:self.infoButton];
   
 }
 
@@ -129,10 +130,11 @@
                       duration:1.0
                        options:UIViewAnimationOptionTransitionFlipFromRight
                     animations:^ { self.selectedImage.alpha = 1.0;
-                        [self.view setBackgroundColor:[UIColor lightGrayColor]];
+                        //234-230-202 BlancoPerla
+                        [self.view setBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:250.0f/255.0f blue:242.0f/255.0f alpha:1]];
                         [self.presentationLabel setHidden:NO];
                         [self.selectedImage setHidden:YES];
-                        [self.presentationLabel setText:@"Photo Annotation                   Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                          Start Writing on the Screen."];
+                       // [self.presentationLabel setText:@"Photo Annotation                   Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                          Start Writing on the Screen."];
                     }
                     completion:NULL
      ];
@@ -141,11 +143,9 @@
     
         [UIView transitionWithView:self.selectedImage
                           duration:1.0
-                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                           options:UIViewAnimationOptionTransitionFlipFromRight
                         animations:^ { self.selectedImage.alpha = 1.0;
                             [self.selectedImage setHidden:NO];
-                            [self.presentationLabel setHidden:YES];
-                            
                         }
                         completion:NULL
          ];
@@ -269,14 +269,12 @@
 {
     if ((_newMedia) || (self.selectedImage.beginTouch))
     {
-        [self.infoButton setHidden:YES];
         UIImageWriteToSavedPhotosAlbum([self makeImage],
                                        self,
                                        @selector(image:didFinishSavingWithError:contextInfo:),
                                        nil);
-        [self.infoButton setHidden:NO];
         _newMedia = NO;
-         self.selectedImage.beginTouch = NO;
+        self.selectedImage.beginTouch = NO;
     }
     
 }

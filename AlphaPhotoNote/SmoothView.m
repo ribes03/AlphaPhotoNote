@@ -181,7 +181,6 @@
       //  UIGraphicsPushContext(context);
         
         [[self colorPen] setStroke];
-        
         CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), true);
         CGContextSetShouldAntialias(UIGraphicsGetCurrentContext(), true);
         
