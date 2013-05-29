@@ -23,6 +23,7 @@
 		44A1A174173410E0004E1424 /* photoNoteRetinaIPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 44A1A173173410E0004E1424 /* photoNoteRetinaIPad.png */; };
 		44AFF96D17231F2000EC6206 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AFF96C17231F2000EC6206 /* PhotoViewController.m */; };
 		44AFF97B172468EF00EC6206 /* SmoothedBIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AFF977172468EF00EC6206 /* SmoothedBIView.m */; };
+		EF53AD42175661AC00C7EFF9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF53AD44175661AC00C7EFF9 /* Localizable.strings */; };
 		EF6E7A0E1733BD2700AF75AB /* photoNoteNonRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E7A0D1733BD2700AF75AB /* photoNoteNonRetina.png */; };
 		EF6E7A101733BD3200AF75AB /* photoNoteRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E7A0F1733BD3200AF75AB /* photoNoteRetina.png */; };
 		EF79911C174503E800BFCC5B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF79911B174503E800BFCC5B /* MobileCoreServices.framework */; };
@@ -51,6 +52,11 @@
 		44AFF96C17231F2000EC6206 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		44AFF976172468EF00EC6206 /* SmoothedBIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmoothedBIView.h; path = ../SmoothedBIView.h; sourceTree = "<group>"; };
 		44AFF977172468EF00EC6206 /* SmoothedBIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmoothedBIView.m; path = ../SmoothedBIView.m; sourceTree = "<group>"; };
+		EF53AD43175661AC00C7EFF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EF53AD451756621500C7EFF9 /* es */ = {isa = PBXFileReference; lastKnownFileType = file; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EF53AD461756622F00C7EFF9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EF53AD47175662B900C7EFF9 /* it */ = {isa = PBXFileReference; lastKnownFileType = file; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EF53AD48175662C900C7EFF9 /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EF6E7A0D1733BD2700AF75AB /* photoNoteNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteNonRetina.png; path = ../photoNoteNonRetina.png; sourceTree = "<group>"; };
 		EF6E7A0F1733BD3200AF75AB /* photoNoteRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteRetina.png; path = ../photoNoteRetina.png; sourceTree = "<group>"; };
 		EF77680A175611660020578F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
@@ -137,6 +143,7 @@
 				4401DD41171601ED0082ACC0 /* AppDelegate.h */,
 				4401DD42171601ED0082ACC0 /* AppDelegate.m */,
 				4401DD3A171601ED0082ACC0 /* AlphaPhotoNote-Info.plist */,
+				EF53AD44175661AC00C7EFF9 /* Localizable.strings */,
 				4401DD3B171601ED0082ACC0 /* InfoPlist.strings */,
 				4401DD3E171601ED0082ACC0 /* main.m */,
 				4401DD40171601ED0082ACC0 /* AlphaPhotoNote-Prefix.pch */,
@@ -184,6 +191,9 @@
 				en,
 				es,
 				Base,
+				fr,
+				it,
+				de,
 			);
 			mainGroup = 4401DD26171601ED0082ACC0;
 			productRefGroup = 4401DD30171601ED0082ACC0 /* Products */;
@@ -210,6 +220,7 @@
 				EF6E7A101733BD3200AF75AB /* photoNoteRetina.png in Resources */,
 				44A1A1721734109F004E1424 /* photoNoteNonRetinaIPad.png in Resources */,
 				44A1A174173410E0004E1424 /* photoNoteRetinaIPad.png in Resources */,
+				EF53AD42175661AC00C7EFF9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +265,18 @@
 				EF77680A175611660020578F /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		EF53AD44175661AC00C7EFF9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF53AD43175661AC00C7EFF9 /* en */,
+				EF53AD451756621500C7EFF9 /* es */,
+				EF53AD461756622F00C7EFF9 /* fr */,
+				EF53AD47175662B900C7EFF9 /* it */,
+				EF53AD48175662C900C7EFF9 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

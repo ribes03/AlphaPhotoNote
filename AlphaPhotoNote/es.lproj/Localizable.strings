@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  AlphaPhotoNote
+
+  Created by Juan Ribes on 29/05/13.
+  Copyright (c) 2013 Juan Ribes. All rights reserved.
+*/                                            
+"labelInfo" = "Escribe una Anotación con el color seleccionado utilizando tu dedo sobre una Foto, Imagen guardada o sobre la pantalla en blanco y guárdalo en la galería de fotos. Pulsa el botón i (info) para continuar.                                              ";
