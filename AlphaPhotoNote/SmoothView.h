@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface SmoothView : UIImageView
+#import "SmoothedBIView.h"
+
+@interface SmoothView : SmoothedBIView
 
 @property (nonatomic) CGPoint lastPoint;
 @property (nonatomic) CGPoint prePreviousPoint;

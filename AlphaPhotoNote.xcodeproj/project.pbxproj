@@ -44,8 +44,6 @@
 		4401DD44171601ED0082ACC0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4401DD46171601ED0082ACC0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4401DD48171601ED0082ACC0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4401DD4B171601ED0082ACC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		4401DD4E171601ED0082ACC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		44A1A16F172C031D004E1424 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		44A1A1711734109F004E1424 /* photoNoteNonRetinaIPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteNonRetinaIPad.png; path = ../photoNoteNonRetinaIPad.png; sourceTree = "<group>"; };
 		44A1A173173410E0004E1424 /* photoNoteRetinaIPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteRetinaIPad.png; path = ../photoNoteRetinaIPad.png; sourceTree = "<group>"; };
@@ -55,6 +53,8 @@
 		44AFF977172468EF00EC6206 /* SmoothedBIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmoothedBIView.m; path = ../SmoothedBIView.m; sourceTree = "<group>"; };
 		EF6E7A0D1733BD2700AF75AB /* photoNoteNonRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteNonRetina.png; path = ../photoNoteNonRetina.png; sourceTree = "<group>"; };
 		EF6E7A0F1733BD3200AF75AB /* photoNoteRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = photoNoteRetina.png; path = ../photoNoteRetina.png; sourceTree = "<group>"; };
+		EF77680A175611660020578F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		EF77680B175611660020578F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		EF79911B174503E800BFCC5B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		EFE4F488174F734500BCB966 /* SmoothView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothView.h; sourceTree = "<group>"; };
 		EFE4F489174F734500BCB966 /* SmoothView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothView.m; sourceTree = "<group>"; };
@@ -182,6 +182,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
+				Base,
 			);
 			mainGroup = 4401DD26171601ED0082ACC0;
 			productRefGroup = 4401DD30171601ED0082ACC0 /* Products */;
@@ -241,7 +243,7 @@
 		4401DD4A171601ED0082ACC0 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4401DD4B171601ED0082ACC0 /* en */,
+				EF77680B175611660020578F /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -249,7 +251,7 @@
 		4401DD4D171601ED0082ACC0 /* MainStoryboard_iPad.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4401DD4E171601ED0082ACC0 /* en */,
+				EF77680A175611660020578F /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
