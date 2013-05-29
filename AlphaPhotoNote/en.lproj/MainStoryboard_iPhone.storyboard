@@ -51,16 +51,36 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="trash" id="bjd-wC-fGE"/>
-                        <barButtonItem systemItem="pageCurl" id="J5Z-2U-zDN"/>
+                        <barButtonItem systemItem="trash" id="bjd-wC-fGE">
+                            <connections>
+                                <action selector="trashNote:" destination="Omw-AF-9kA" id="gKw-RI-kU9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem systemItem="pageCurl" id="J5Z-2U-zDN">
+                            <connections>
+                                <action selector="clearNote:" destination="Omw-AF-9kA" id="EY0-Ox-vUA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="SqJ-VN-hZg"/>
-                        <barButtonItem systemItem="camera" id="oNN-24-Ovt"/>
+                        <barButtonItem systemItem="camera" id="oNN-24-Ovt">
+                            <connections>
+                                <action selector="takePhoto:" destination="Omw-AF-9kA" id="8X7-2a-W9G"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="6ds-r6-vDi"/>
-                        <barButtonItem systemItem="organize" id="NJw-xW-eSk"/>
+                        <barButtonItem systemItem="organize" id="NJw-xW-eSk">
+                            <connections>
+                                <action selector="addPhoto:" destination="Omw-AF-9kA" id="gRn-D7-jGh"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="yh6-Kp-485">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="udf-OC-PPn"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="compose" id="udf-OC-PPn">
+                            <connections>
+                                <action selector="setColorPen:" destination="Omw-AF-9kA" id="xL8-Th-KFa"/>
+                            </connections>
+                        </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="EyQ-sn-tMr">
                             <rect key="frame" x="47" y="6" width="211" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -76,6 +96,9 @@
                                     <state key="highlighted">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="showInfo:" destination="Omw-AF-9kA" eventType="touchUpInside" id="aUL-g9-Mcs"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Photo Note" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="vKP-Qk-q0E">
                                     <rect key="frame" x="5" y="0.0" width="153" height="33"/>
@@ -87,11 +110,23 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bm0-Bm-nul"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bm0-Bm-nul">
+                            <connections>
+                                <action selector="saveAlphaPhoto:" destination="Omw-AF-9kA" id="UV1-as-pRb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackOpaque"/>
+                    <connections>
+                        <outlet property="clearButton" destination="J5Z-2U-zDN" id="Yxl-iD-elm"/>
+                        <outlet property="infoButton" destination="d4m-Lx-beN" id="Z50-bT-06H"/>
+                        <outlet property="presentationLabel" destination="k0A-cF-MMF" id="Ied-4C-3zm"/>
+                        <outlet property="saveButton" destination="bm0-Bm-nul" id="jaJ-dZ-GU7"/>
+                        <outlet property="selectedImage" destination="LVs-rL-fWv" id="LaW-Xe-0rD"/>
+                        <outlet property="trashButton" destination="bjd-wC-fGE" id="B40-W3-gy8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ew-l1-olr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
