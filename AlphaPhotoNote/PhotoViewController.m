@@ -315,8 +315,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //get localized string from appropriate strings file
-    [self.presentationLabel setText:NSLocalizedString(@"labelInfo", @"Hola")];
 }
 
 - (void)didReceiveMemoryWarning
