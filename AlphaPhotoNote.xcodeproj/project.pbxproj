@@ -26,6 +26,7 @@
 		EF6E7A0E1733BD2700AF75AB /* photoNoteNonRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E7A0D1733BD2700AF75AB /* photoNoteNonRetina.png */; };
 		EF6E7A101733BD3200AF75AB /* photoNoteRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6E7A0F1733BD3200AF75AB /* photoNoteRetina.png */; };
 		EF79911C174503E800BFCC5B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF79911B174503E800BFCC5B /* MobileCoreServices.framework */; };
+		EFBC3D2817579C0300885698 /* InforView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFBC3D2717579C0300885698 /* InforView.m */; };
 		EFE4F48A174F734500BCB966 /* SmoothView.m in Sources */ = {isa = PBXBuildFile; fileRef = EFE4F489174F734500BCB966 /* SmoothView.m */; };
 		EFF0685C172A657D00767E07 /* RotableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF0685A172A657D00767E07 /* RotableViewController.m */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,8 @@
 		EF77680A175611660020578F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		EF77680B175611660020578F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		EF79911B174503E800BFCC5B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		EFBC3D2617579C0300885698 /* InforView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InforView.h; sourceTree = "<group>"; };
+		EFBC3D2717579C0300885698 /* InforView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InforView.m; sourceTree = "<group>"; };
 		EFE4F488174F734500BCB966 /* SmoothView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmoothView.h; sourceTree = "<group>"; };
 		EFE4F489174F734500BCB966 /* SmoothView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmoothView.m; sourceTree = "<group>"; };
 		EFF06859172A657D00767E07 /* RotableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RotableViewController.h; path = ../RotableViewController.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				44AFF977172468EF00EC6206 /* SmoothedBIView.m */,
 				EFE4F488174F734500BCB966 /* SmoothView.h */,
 				EFE4F489174F734500BCB966 /* SmoothView.m */,
+				EFBC3D2617579C0300885698 /* InforView.h */,
+				EFBC3D2717579C0300885698 /* InforView.m */,
 				44AFF96B17231F2000EC6206 /* PhotoViewController.h */,
 				44AFF96C17231F2000EC6206 /* PhotoViewController.m */,
 				4401DD4A171601ED0082ACC0 /* MainStoryboard_iPhone.storyboard */,
@@ -226,6 +231,7 @@
 				44AFF97B172468EF00EC6206 /* SmoothedBIView.m in Sources */,
 				EFF0685C172A657D00767E07 /* RotableViewController.m in Sources */,
 				EFE4F48A174F734500BCB966 /* SmoothView.m in Sources */,
+				EFBC3D2817579C0300885698 /* InforView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
