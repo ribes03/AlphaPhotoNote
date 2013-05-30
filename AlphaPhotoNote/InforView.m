@@ -40,13 +40,18 @@
 {
     [self setMultipleTouchEnabled:NO];
     
-    NSString *infoString = @"This is an example of Attributed String";
+  //  NSString *title = @"Photo Annotation";
+  //  NSString *infoString = [[[NSString alloc] init ]stringByAppendingString:title];
+    NSString *infoString = NSLocalizedString(@"labelInfo", @"");
+ //   [infoString stringByAppendingString: localizedString];
+//    NSLog(@"Localized %@", localizedString);
+    NSLog(@"infoString %@", infoString);
     
     NSMutableAttributedString *attString=[[NSMutableAttributedString alloc] initWithString:infoString];
     NSInteger _stringLength=[infoString length];
     
     UIColor *_red=[UIColor redColor];
-    UIFont *font=[UIFont fontWithName:@"Helvetica-Bold" size:52.0f];
+    UIFont *font=[UIFont fontWithName:@"Helvetica-Bold" size:32.0f];
     [attString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, _stringLength)];
     [attString addAttribute:NSStrokeColorAttributeName value:_red range:NSMakeRange(0, _stringLength)];
     [attString addAttribute:NSStrokeWidthAttributeName value:[NSNumber numberWithFloat:3.0] range:NSMakeRange(0, _stringLength)];
