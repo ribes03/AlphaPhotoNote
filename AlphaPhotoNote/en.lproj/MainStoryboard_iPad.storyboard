@@ -61,11 +61,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="BCV-vi-Rs4" customClass="SmoothView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="936"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -143,7 +138,6 @@
                         <outlet property="infoButton" destination="Eav-VT-IQ6" id="b6U-S9-SoQ"/>
                         <outlet property="presentationLabel" destination="h6H-y6-PWk" id="T0p-zr-kcC"/>
                         <outlet property="saveButton" destination="3xk-OJ-dRi" id="3yG-bb-1gB"/>
-                        <outlet property="selectedImage" destination="BCV-vi-Rs4" id="dkw-jE-N2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g20-r4-PB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
