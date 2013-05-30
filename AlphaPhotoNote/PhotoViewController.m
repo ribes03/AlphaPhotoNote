@@ -26,7 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 
-@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property (weak, nonatomic) IBOutlet InforView *infoView;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (nonatomic,assign) BOOL alertShowing,infoShowing;
 @end
@@ -135,9 +135,9 @@
                        options:UIViewAnimationOptionTransitionFlipFromRight
                     animations:^ { self.selectedImage.alpha = 1.0;
                         //234-230-202 BlancoPerla
-                        //[self.infoView setBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:250.0f/255.0f blue:242.0f/255.0f alpha:1]];
-                        [self.infoView setBackgroundColor:[UIColor lightGrayColor]];
-                        [self.infoView setHidden:NO];                   
+                        [self.infoView setBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:250.0f/255.0f blue:242.0f/255.0f alpha:1]];
+                        [self.infoView setHidden:NO];
+                        [self.infoView configure];
                         [self.selectedImage setHidden:YES];
                       
                     }
