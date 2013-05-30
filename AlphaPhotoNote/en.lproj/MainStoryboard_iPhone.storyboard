@@ -12,47 +12,40 @@
                         <rect key="frame" x="0.0" y="44" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="k0A-cF-MMF">
+                                <rect key="frame" x="0.0" y="34" width="320" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Photo Annotation">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="28" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            <integer key="NSUnderline" value="1"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="                  ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="27" name="Helvetica-LightOblique"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll. Press info button to continue.                                              </string>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="25" name="Helvetica-LightOblique"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" id="LVs-rL-fWv" customClass="SmoothedBIView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" id="h5p-bU-VY1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="k0A-cF-MMF">
-                                        <rect key="frame" x="0.0" y="38" width="320" height="404"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Photo Annotation">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="28" name="Helvetica"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    <integer key="NSUnderline" value="1"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment content="                  ">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="27" name="Helvetica-LightOblique"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                            <fragment>
-                                                <string key="content">Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll. Press info button to continue.                                              </string>
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="25" name="Helvetica-LightOblique"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,8 +122,7 @@
                     <connections>
                         <outlet property="clearButton" destination="J5Z-2U-zDN" id="Yxl-iD-elm"/>
                         <outlet property="infoButton" destination="d4m-Lx-beN" id="Z50-bT-06H"/>
-                        <outlet property="infoLabel" destination="k0A-cF-MMF" id="PGg-tH-6ww"/>
-                        <outlet property="infoView" destination="h5p-bU-VY1" id="sHL-Ud-YHB"/>
+                        <outlet property="presentationLabel" destination="k0A-cF-MMF" id="Ied-4C-3zm"/>
                         <outlet property="saveButton" destination="bm0-Bm-nul" id="jaJ-dZ-GU7"/>
                         <outlet property="selectedImage" destination="LVs-rL-fWv" id="LaW-Xe-0rD"/>
                         <outlet property="trashButton" destination="bjd-wC-fGE" id="B40-W3-gy8"/>

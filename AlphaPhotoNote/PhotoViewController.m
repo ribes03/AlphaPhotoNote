@@ -25,15 +25,14 @@
 @property (weak, nonatomic) IBOutlet SmoothedBIView *selectedImage;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
-@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
-@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (nonatomic,assign) BOOL alertShowing,infoShowing;
 @end
 
 @implementation PhotoViewController
 
-@synthesize colorButton,saveButton,trashButton,clearButton,infoLabel;
+@synthesize colorButton,saveButton,trashButton,clearButton,presentationLabel;
 @synthesize selectedImage = _selectedImage;
 
 
@@ -44,9 +43,6 @@
     _newMedia = YES;
     _infoShowing = NO;
     [self showInfo:self.infoButton];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(flipInfo:)];
-    tap.numberOfTapsRequired = 2; // Tap twice to flip Info!
-    [self.infoView addGestureRecognizer:tap];
   
 }
 
@@ -126,11 +122,6 @@
     self.selectedImage.beginTouch = NO;
 }
 
--(void) flipInfo:(UITapGestureRecognizer *)t
-{
-    [self showInfo:self.infoButton];
-}
-
 - (IBAction)showInfo:(UIButton *)sender
 {
     
@@ -141,7 +132,7 @@
                     animations:^ { self.selectedImage.alpha = 1.0;
                         //234-230-202 BlancoPerla
                         [self.view setBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:250.0f/255.0f blue:242.0f/255.0f alpha:1]];
-                        [self.infoLabel setHidden:NO];
+                        [self.presentationLabel setHidden:NO];
                         [self.selectedImage setHidden:YES];
                        // [self.presentationLabel setText:@"Photo Annotation                   Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                          Start Writing on the Screen."];
                     }
