@@ -10,7 +10,7 @@
 
 @interface InforView ()
 
-@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+
 
 @end
 
@@ -19,6 +19,15 @@
 
 @synthesize infoLabel = _infoLabel;
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder])
+    {
+        [self configure];
+    }
+    return self;
+    
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -27,42 +36,29 @@
     }
     return self;
 }
-
 -(void)configure
 {
     [self setMultipleTouchEnabled:NO];
     
-    NSString *infoString=@"This is an example of Attributed String";
+  //  NSString *title = @"Photo Annotation";
+  //  NSString *infoString = [[[NSString alloc] init ]stringByAppendingString:title];
+    NSString *infoString = NSLocalizedString(@"labelInfo", @"");
+ //   [infoString stringByAppendingString: localizedString];
+//    NSLog(@"Localized %@", localizedString);
+    NSLog(@"infoString %@", infoString);
     
     NSMutableAttributedString *attString=[[NSMutableAttributedString alloc] initWithString:infoString];
     NSInteger _stringLength=[infoString length];
     
     UIColor *_red=[UIColor redColor];
-    UIFont *font=[UIFont fontWithName:@"Helvetica-Bold" size:72.0f];
+    UIFont *font=[UIFont fontWithName:@"Helvetica-Bold" size:32.0f];
     [attString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, _stringLength)];
     [attString addAttribute:NSStrokeColorAttributeName value:_red range:NSMakeRange(0, _stringLength)];
     [attString addAttribute:NSStrokeWidthAttributeName value:[NSNumber numberWithFloat:3.0] range:NSMakeRange(0, _stringLength)];
     
-    [self.infoLabel setAttributedText:attString];
-    [self addSubview:self.infoLabel];
+    self.infoLabel.attributedText = attString;
+    
 }
 
-
-
-
-
-
-
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

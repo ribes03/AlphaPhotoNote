@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InforView : UIView
-
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+- (void) configure;
 @end
