@@ -25,16 +25,14 @@
 @property (weak, nonatomic) IBOutlet SmoothedBIView *selectedImage;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
-
-@property (weak, nonatomic) IBOutlet InforView *infoView;
+@property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (nonatomic,assign) BOOL alertShowing,infoShowing;
 @end
 
 @implementation PhotoViewController
 
-@synthesize colorButton,saveButton,trashButton,clearButton;
-@synthesize infoView = _infoView;
+@synthesize colorButton,saveButton,trashButton,clearButton,presentationLabel;
 @synthesize selectedImage = _selectedImage;
 
 
@@ -44,7 +42,8 @@
     self.title = @"Photo Note";
     _newMedia = YES;
     _infoShowing = NO;
-    
+    [self showInfo:self.infoButton];
+  
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -113,33 +112,29 @@
                        options:UIViewAnimationOptionTransitionCurlUp
                     animations:^ { self.selectedImage.alpha = 1.0;
                         [self.selectedImage trash];
-                                           }
+                       // [self.presentationLabel setText:@""];
+                       // [self.presentationLabel setHidden:YES];
+                        // self.presentationLabel = nil;
+                    }
                     completion:NULL
      ];
     _newMedia = NO;
     self.selectedImage.beginTouch = NO;
 }
 
--(void) flipInfo:(UITapGestureRecognizer *)t
-{
-    [self showInfo:self.infoButton];
-}
-
 - (IBAction)showInfo:(UIButton *)sender
 {
     
     if (!_infoShowing){
-        
     [UIView transitionWithView:self.selectedImage
                       duration:1.0
                        options:UIViewAnimationOptionTransitionFlipFromRight
                     animations:^ { self.selectedImage.alpha = 1.0;
                         //234-230-202 BlancoPerla
-                        [self.infoView setBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:250.0f/255.0f blue:242.0f/255.0f alpha:1]];
-                        [self.infoView setHidden:NO];
-                        [self.infoView configure];
+                        [self.view setBackgroundColor:[UIColor colorWithRed:254.0f/255.0f green:250.0f/255.0f blue:242.0f/255.0f alpha:1]];
+                        [self.presentationLabel setHidden:NO];
                         [self.selectedImage setHidden:YES];
-                      
+                       // [self.presentationLabel setText:@"Photo Annotation                   Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll.                          Start Writing on the Screen."];
                     }
                     completion:NULL
      ];
@@ -167,6 +162,9 @@
                        options:UIViewAnimationOptionTransitionCurlUp
                     animations:^ { self.selectedImage.alpha = 1.0;
                         [self.selectedImage replaceImage];
+                       // [self.presentationLabel setText:@""];
+                      //   [self.presentationLabel setHidden:YES];
+                        //self.presentationLabel = nil;
                     }
                     completion:NULL
      ];
@@ -317,11 +315,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self showInfo:self.infoButton];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(flipInfo:)];
-    tap.numberOfTapsRequired = 2; // Tap twice to flip Info
-    [self.infoView addGestureRecognizer:tap];
-    
 }
 
 - (void)didReceiveMemoryWarning

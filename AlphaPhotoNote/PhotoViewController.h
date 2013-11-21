@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RotableViewController.h"
 #import "SmoothedBIView.h"
-#import "InforView.h"
+
 @interface PhotoViewController : RotableViewController
 @end
