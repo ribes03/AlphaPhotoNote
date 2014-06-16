@@ -175,6 +175,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Juan Ribes";
+				TargetAttributes = {
+					4401DD2E171601ED0082ACC0 = {
+						DevelopmentTeam = N8QV93L565;
+					};
+				};
 			};
 			buildConfigurationList = 4401DD2A171601ED0082ACC0 /* Build configuration list for PBXProject "AlphaPhotoNote" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -322,6 +327,8 @@
 		4401DD6B171601ED0082ACC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AlphaPhotoNote/AlphaPhotoNote-Prefix.pch";
 				INFOPLIST_FILE = "AlphaPhotoNote/AlphaPhotoNote-Info.plist";
@@ -330,6 +337,7 @@
 				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_NAME = AlphaPhotoNote;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -337,6 +345,8 @@
 		4401DD6C171601ED0082ACC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AlphaPhotoNote/AlphaPhotoNote-Prefix.pch";
 				INFOPLIST_FILE = "AlphaPhotoNote/AlphaPhotoNote-Info.plist";
@@ -344,6 +354,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = AlphaPhotoNote;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

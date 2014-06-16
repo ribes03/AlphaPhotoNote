@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E5162078-D238-4FAC-9D8B-DB4D58C3141F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AlphaPhotoNote</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>364905CD-173D-4D88-A678-D92871ED7B3C</key>
+		<string>https://github.com/ribes03/AlphaPhotoNote.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AlphaPhotoNote.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>364905CD-173D-4D88-A678-D92871ED7B3C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ribes03/AlphaPhotoNote.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>364905CD-173D-4D88-A678-D92871ED7B3C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>364905CD-173D-4D88-A678-D92871ED7B3C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AlphaPhotoNote</string>
+		</dict>
+	</array>
+</dict>
+</plist>
