@@ -253,12 +253,55 @@
     }
 }
 
+
+-(CGRect) getRect
+{
+    double x = self.selectedImage.bounds.size.width;
+    double y = self.selectedImage.bounds.size.height;
+    CGRect cellImageFrame = self.selectedImage.bounds;
+    if(x != 0 && y != 0){
+        
+        double ratio = x/y;
+        
+        if(y <= self.view.bounds.size.height){
+            if(x < self.view.bounds.size.width){
+                
+                y = self.view.bounds.size.height;
+                x = y*ratio;
+                double xoffset = cellImageFrame.size.width -x;
+                cellImageFrame = CGRectMake(cellImageFrame.origin.x + (xoffset/2), cellImageFrame.origin.y+2, x, y);
+            }else{
+                x = self.view.bounds.size.width;
+                y = x/ratio;
+                double yoffset = cellImageFrame.size.height -y;
+                cellImageFrame = CGRectMake(cellImageFrame.origin.x+2, cellImageFrame.origin.y + (yoffset/2), x, y);
+                
+            }
+        }else{
+            y = self.view.bounds.size.height;
+            x = ratio*y;
+            if(x < self.view.bounds.size.width){
+                double xoffset = cellImageFrame.size.width -x;
+                cellImageFrame = CGRectMake(cellImageFrame.origin.x + (xoffset/2), cellImageFrame.origin.y+2, x, y);
+            }else{
+                x = self.view.bounds.size.width;
+                y = x/ratio;
+                
+                double yoffset = cellImageFrame.size.height -y;
+                cellImageFrame = CGRectMake(cellImageFrame.origin.x+2, cellImageFrame.origin.y + (yoffset/2), x, y);
+                
+            }
+        }
+        
+    }
+    return cellImageFrame;
+}
+
+
 -(UIImage*) makeImage {
     
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    
+    UIGraphicsBeginImageContext([self getRect].size);
     [self.selectedImage.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
     UIImage *viewImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     

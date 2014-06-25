@@ -54,7 +54,6 @@
     [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
 
 }
-/*
 
 - (BOOL)shouldAutorotate {
     
@@ -66,5 +65,5 @@
 {
     return UIInterfaceOrientationMaskAll;
 }
-*/
+
 @end

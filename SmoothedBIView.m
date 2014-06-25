@@ -25,6 +25,7 @@
 {
     [self setMultipleTouchEnabled:NO];
     [self setPath:[UIBezierPath bezierPath]];
+   // [self setContentMode:UIViewContentModeScaleAspectFit];
     [self.path setLineWidth:2.0];
     [self setColorPen:[UIColor blueColor]];
     _shouldClean = NO;
@@ -150,9 +151,12 @@
 -(void) replaceImage
 {
     self.incrementalImage = self.bufferedImage;
+    //[self setContentMode:UIViewContentModeScaleAspectFit];
     [self drawBitmap];
     [self setNeedsDisplay];
 }
+
+
 
 - (void)drawBitmap
 {
@@ -168,6 +172,7 @@
     }
     CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), true);
     CGContextSetShouldAntialias(UIGraphicsGetCurrentContext(), true);
+
     [self.incrementalImage drawInRect:CGRectMake(0,0,self.bounds.size.width,self.bounds.size.height)];
     [self.colorPen setStroke];
     [self.path stroke];
