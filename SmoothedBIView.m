@@ -26,7 +26,7 @@
     [self setMultipleTouchEnabled:NO];
     [self setPath:[UIBezierPath bezierPath]];
    // [self setContentMode:UIViewContentModeScaleAspectFit];
-    [self.path setLineWidth:2.0];
+    [self.path setLineWidth:1.85];
     [self setColorPen:[UIColor blueColor]];
     _shouldClean = NO;
     _beginTouch = NO;

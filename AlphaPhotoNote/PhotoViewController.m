@@ -26,7 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *trashButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (weak, nonatomic) IBOutlet UILabel *presentationLabel;
-@property (weak, nonatomic) IBOutlet UIButton *infoButton;
+//@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (nonatomic,assign) BOOL alertShowing,infoShowing;
 @end
 
@@ -42,7 +42,7 @@
     self.title = @"Photo Note";
     _newMedia = YES;
     _infoShowing = NO;
-    [self showInfo:self.infoButton];
+ //   [self showInfo:self.infoButton];
   
 }
 
@@ -112,9 +112,9 @@
                        options:UIViewAnimationOptionTransitionCurlUp
                     animations:^ { self.selectedImage.alpha = 1.0;
                         [self.selectedImage trash];
-                       // [self.presentationLabel setText:@""];
-                       // [self.presentationLabel setHidden:YES];
-                        // self.presentationLabel = nil;
+                        [self.presentationLabel setText:@""];
+                        [self.presentationLabel setHidden:YES];
+                        self.presentationLabel = nil;
                     }
                     completion:NULL
      ];
@@ -122,7 +122,7 @@
     self.selectedImage.beginTouch = NO;
 }
 
-- (IBAction)showInfo:(UIButton *)sender
+/*- (IBAction)showInfo:(UIButton *)sender
 {
     
     if (!_infoShowing){
@@ -154,7 +154,7 @@
 
 
 }
-    
+  */
 - (IBAction)clearNote:(UIBarButtonItem *)sender
 {
     [UIView transitionWithView:self.selectedImage
@@ -162,9 +162,9 @@
                        options:UIViewAnimationOptionTransitionCurlUp
                     animations:^ { self.selectedImage.alpha = 1.0;
                         [self.selectedImage replaceImage];
-                       // [self.presentationLabel setText:@""];
-                      //   [self.presentationLabel setHidden:YES];
-                        //self.presentationLabel = nil;
+                        [self.presentationLabel setText:@""];
+                        [self.presentationLabel setHidden:YES];
+                        self.presentationLabel = nil;
                     }
                     completion:NULL
      ];

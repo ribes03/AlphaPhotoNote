@@ -1,57 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="VUq-c7-4D3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E33b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VUq-c7-4D3">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Photo View Controller-->
+        <!--Photo Note-->
         <scene sceneID="Rml-qW-0QX">
             <objects>
                 <viewController id="Omw-AF-9kA" customClass="PhotoViewController" sceneMemberID="viewController">
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="mBf-Zh-XXK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h4U-PV-QIV"/>
+                        <viewControllerLayoutGuide type="bottom" id="dKC-ZE-zCM"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="redraw" id="mBf-Zh-XXK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="8" highlighted="YES" adjustsFontSizeToFit="NO" id="k0A-cF-MMF">
-                                <rect key="frame" x="0.0" y="160" width="320" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Photo Annotation">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="28" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="                  ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="27" name="Helvetica-LightOblique"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll. Press info button to continue.                                              </string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="25" name="Helvetica-LightOblique"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <string key="userLabel">Label - Photo Annotation                  Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll. Press info button to continue.</string>
-                            </label>
-                            <view contentMode="scaleToFill" id="LVs-rL-fWv" customClass="SmoothedBIView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LVs-rL-fWv" customClass="SmoothedBIView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <subviews>
+                                    <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0A-cF-MMF">
+                                        <rect key="frame" x="0.0" y="107" width="600" height="277"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="277" id="HwU-Uo-ZZY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-LightOblique" family="Helvetica" pointSize="25"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <string key="userLabel">Label - Photo Annotation                  Write a Note using your finger with a selected color over a Photo, Saved Image or White Canvas and save it to your camera roll. Press info button to continue.</string>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="k0A-cF-MMF" secondAttribute="centerY" constant="0.5" id="CX4-Ul-11d"/>
+                                    <constraint firstAttribute="trailing" secondItem="k0A-cF-MMF" secondAttribute="trailing" id="FY4-bd-gS3"/>
+                                    <constraint firstItem="k0A-cF-MMF" firstAttribute="leading" secondItem="LVs-rL-fWv" secondAttribute="leading" id="RJu-x2-gTo"/>
+                                    <constraint firstItem="k0A-cF-MMF" firstAttribute="top" secondItem="LVs-rL-fWv" secondAttribute="top" constant="107" id="oNl-aS-vb6"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="LVs-rL-fWv" secondAttribute="trailing" id="46F-DB-j8k"/>
+                            <constraint firstItem="LVs-rL-fWv" firstAttribute="bottom" secondItem="dKC-ZE-zCM" secondAttribute="top" id="E7D-eg-mzL"/>
+                            <constraint firstItem="LVs-rL-fWv" firstAttribute="top" secondItem="h4U-PV-QIV" secondAttribute="bottom" id="IQX-Yw-72N"/>
+                            <constraint firstItem="LVs-rL-fWv" firstAttribute="leading" secondItem="mBf-Zh-XXK" secondAttribute="leading" id="hfN-cL-FOn"/>
+                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem systemItem="trash" id="bjd-wC-fGE">
@@ -77,35 +73,12 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="yh6-Kp-485">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Photo Note" id="yh6-Kp-485">
                         <barButtonItem key="leftBarButtonItem" systemItem="compose" id="udf-OC-PPn">
                             <connections>
                                 <action selector="setColorPen:" destination="Omw-AF-9kA" id="xL8-Th-KFa"/>
                             </connections>
                         </barButtonItem>
-                        <view key="titleView" contentMode="scaleToFill" id="EyQ-sn-tMr">
-                            <rect key="frame" x="56" y="6" width="211" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="d4m-Lx-beN">
-                                    <rect key="frame" x="176" y="6" width="22" height="22"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="65"/>
-                                    <connections>
-                                        <action selector="showInfo:" destination="Omw-AF-9kA" eventType="touchUpInside" id="aUL-g9-Mcs"/>
-                                    </connections>
-                                </button>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Photo Note" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" id="vKP-Qk-q0E">
-                                    <rect key="frame" x="7" y="0.0" width="153" height="33"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </view>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bm0-Bm-nul">
                             <connections>
                                 <action selector="saveAlphaPhoto:" destination="Omw-AF-9kA" id="UV1-as-pRb"/>
@@ -114,11 +87,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
-                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="clearButton" destination="J5Z-2U-zDN" id="Yxl-iD-elm"/>
-                        <outlet property="infoButton" destination="d4m-Lx-beN" id="Z50-bT-06H"/>
-                        <outlet property="presentationLabel" destination="k0A-cF-MMF" id="Ied-4C-3zm"/>
+                        <outlet property="presentationLabel" destination="k0A-cF-MMF" id="vgH-vO-T0A"/>
                         <outlet property="saveButton" destination="bm0-Bm-nul" id="jaJ-dZ-GU7"/>
                         <outlet property="selectedImage" destination="LVs-rL-fWv" id="LaW-Xe-0rD"/>
                         <outlet property="trashButton" destination="bjd-wC-fGE" id="B40-W3-gy8"/>
@@ -126,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Ew-l1-olr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2851" y="-4504"/>
+            <point key="canvasLocation" x="-5301" y="-4792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ua-N4-dOh">
@@ -151,12 +122,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TE-SZ-h4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3377" y="-4504"/>
+            <point key="canvasLocation" x="-6331.875" y="-4757.7464788732395"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

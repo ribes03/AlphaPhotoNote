@@ -10,29 +10,29 @@
 	<string>AlphaPhotoNote</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>364905CD-173D-4D88-A678-D92871ED7B3C</key>
+		<key>C0117E34EC7703C8DA78CC8BEDD9DB3AE1C48C7A</key>
 		<string>https://github.com/ribes03/AlphaPhotoNote.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>AlphaPhotoNote.xcodeproj/project.xcworkspace</string>
+	<string>AlphaPhotoNote.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>364905CD-173D-4D88-A678-D92871ED7B3C</key>
+		<key>C0117E34EC7703C8DA78CC8BEDD9DB3AE1C48C7A</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/ribes03/AlphaPhotoNote.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>364905CD-173D-4D88-A678-D92871ED7B3C</string>
+	<string>C0117E34EC7703C8DA78CC8BEDD9DB3AE1C48C7A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>364905CD-173D-4D88-A678-D92871ED7B3C</string>
+			<string>C0117E34EC7703C8DA78CC8BEDD9DB3AE1C48C7A</string>
 			<key>IDESourceControlWCCName</key>
 			<string>AlphaPhotoNote</string>
 		</dict>
